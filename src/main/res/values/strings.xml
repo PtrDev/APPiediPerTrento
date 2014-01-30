@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!--app settings-->
+    <string name="app_name">APPiedi Per Trento</string>
+    <string name="API_KEY">AIzaSyAvZarjD_OjhhW73tNJadW2L8rfVpMBmao</string>
+    <string name="API_KEY_private">AIzaSyD4MU9ZM_HIanKxhfMEGrIxZkeZxnSmtNs</string>
+    <string name="app_id">1375547136033952</string>
+    <string name="Mac">00:17:E9:50:D1:5C</string>
+    <string name="Mac_base">00:00:00:00:00:00</string>
+
+    <!--fragments title-->
+    <string name="title_section1">Real Time CO</string>
+    <string name="title_section2">CO Map</string>
+    <string name="title_section3">My Air</string>
+
+    <!--menu options-->
+    <string name="action_settings">Settings</string>
+    <string name="change_device">Change Device</string>
+    <string name="map_type">Map Type</string>
+    <string name="log_out">Log out</string>
+    <string name="battery_voltage">Battery Voltage</string>
+
+    <!--fragment 1 view - Real Time CO-->
+    <string name="fr1_ConnectSensor">Connect\nSensor</string>
+    <string name="fr1_sensorText">Connect\nSensordrone</string>
+    <string name="fr1_enable">SensorDrone</string>
+    <string name="fr1_loader">loader</string>
+    <string name="fr1_air">YOUR AIR QUALITY:</string>
+    <string name="fr1_airquality">AirQuality</string>
+    <string name="fr1_ppm">0 ppm</string>
+    <string name="fr1_good">good</string>
+    <string name="fr1_quality_good">good</string>
+    <string name="fr1_quality_moderate">moderate</string>
+    <string name="fr1_quality_bad">bad</string>
+    <string name="fr1_wait"> </string>
+    <string name="fr1_bt_not_available">Bluetooth not available</string>
+    <string name="fr1_mean_absolute">Total\nAverage</string>
+    <string name="fr1_mean_weekly">Weekly\nAverage</string>
+    <string name="fr1_mean_daily">Week-day\nAverage</string>
+    <string name="fr1_mean_yesterday">Yesterday\nAverage</string>
+    <string name="fr1_mean_today">Today\nAverage</string>
+    <string name="fr1_myDrone">My Drone</string>
+    <string name="fr1_value_mean_absolute">"???"</string>
+    <string name="fr1_value_mean_weekly">"???"</string>
+    <string name="fr1_value_mean_daily">"???"</string>
+    <string name="fr1_value_mean_yesterday">"???"</string>
+    <string name="fr1_value_mean_today">"???"</string>
+    <string name="fr1_value_myDrone">"???"</string>
+
+    <!--fragment 2 view - CO map-->
+    <string name="fr2_button1">Type</string>
+    <string name="fr2_play">play_geolocation</string>
+    <string name="fr2_clear">clear</string>
+    <string name="fr2_map_type_select">Choose Map Type:</string>
+
+    <!--fragment 3 view - #30b535 - My Air-->
+    <string name="fb_share">f</string>
+    <string name="fr3_fb_login">fb_login</string>
+    <string name="fr3_gp_login">google plus login</string>
+    <string name="fr3_Login">Log in</string>
+    <string name="fr3_background">logo</string>
+
+    <!--user profile view -->
+    <string name="up_picture">up_picture</string>
+    <string name="up_profile_name">First name\nLast Name</string>
+    <string name="up_share">Share</string>
+
+    <!--errors view -no bluetooth - no google maps-->
+    <string name="nb_text">BLUETOOTH\nNOT AVAILABLE</string>
+    <string name="nGms_text">GOOGLE MAPS\nNOT AVAILABLE</string>
+    <string name="nb_text1">ERROR</string>
+
+
+    <string name="marker1">user</string>
+    <string name="markers_position">Large Text</string>
+    <string name="main_logo">Main</string>
+    <string name="up_logo">up_logo</string>
+    <string name="share_title">Share your Air-Quality!</string>
+    <string name="sa_share">Share</string>
+    <string name="sa_edittext">What do you think?</string>
+    <string name="change_account">Change account</string>
+    <string name="fr1_logo">fr1_logo</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="settings_title">Settings</string>
+    <string name="fr2_search_start_position">search start position</string>
+    <string name="fr2_find_path">Find Path</string>
+    <string name="fp_title">Find Path</string>
+    <string name="fp_start_pint">Choose starting point</string>
+    <string name="fp_destination">Choose destination</string>
+    <string name="find_path_title">Find Path</string>
+    <string name="fp_cancel">Cancel</string>
+    <string name="fp_ok">OK</string>
+    <string name="clear_map">Clear Map</string>
+    <string name="fp_end_my_position">end position</string>
+    <string name="fp_startmyposition">start my position</string>
+    <string name="sp_radio1">Select path:</string>
+    <string name="sp_radio2">Select max length:</string>
+    <string name="fp_max_length">Max length(km)</string>
+    <string name="fp_start_destination">Start and destination</string>
+    <string name="refresh">Refresh</string>
+    <string name="co_trend">CO Trend</string>
+    <string name="data_range">Data range</string>
+    <string name="co_trend_title">CO Average Value</string>
+    <string name="pick_date_title">Pick Date</string>
+    <string name="from_date">From Date:</string>
+    <string name="select_date">Select Date</string>
+    <string name="to_date">To Date:</string>
+    <string name="date_ok">OK</string>
+    <string name="date_cancel">Cancel</string>
+
+
+</resources>

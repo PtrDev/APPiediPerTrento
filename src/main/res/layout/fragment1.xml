@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/texts_layout"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="visible">
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:stretchColumns="*">
+
+            <TableRow
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView android:text="@string/fr1_value_mean_absolute"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:id="@+id/fr1_text_absolute"
+                    android:background="@drawable/shade_red"
+                    android:layout_weight="1" />
+
+                <TextView android:text="@string/fr1_value_mean_weekly"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:id="@+id/fr1_text_weekly"
+                    android:background="@drawable/shade_green"
+                    android:layout_weight="1" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView android:text="@string/fr1_value_mean_daily"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:id="@+id/fr1_text_daily"
+                    android:background="@drawable/shade_orange"
+                    android:layout_weight="1" />
+
+                <TextView android:text="@string/fr1_value_mean_yesterday"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:id="@+id/fr1_text_yesterday"
+                    android:background="@drawable/shade_red"
+                    android:layout_weight="1" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView android:text="@string/fr1_value_mean_today"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:id="@+id/fr1_text_today"
+                    android:background="@drawable/shade_green"
+                    android:layout_weight="1" />
+
+                <TextView android:text="@string/fr1_value_myDrone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:id="@+id/fr1_text_drone"
+                    android:background="@drawable/shade_orange"
+                    android:layout_weight="1" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttons_layout"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="visible">
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:stretchColumns="*">
+
+            <TableRow
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button android:text="@string/fr1_mean_absolute"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/fr1_mean_absolute"
+                    android:background="#fe0202"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:textSize="21dp" />
+
+                <Button android:text="@string/fr1_mean_weekly"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/fr1_mean_weekly"
+                    android:background="#f17d37"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:textSize="21dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button android:text="@string/fr1_mean_daily"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/fr1_mean_daily"
+                    android:background="#03c002"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:textSize="21dp" />
+
+                <Button android:text="@string/fr1_mean_yesterday"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/fr1_mean_yesterday"
+                    android:background="#ffff02"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:textSize="21dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button android:text="@string/fr1_mean_today"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/fr1_mean_today"
+                    android:background="#0202c0"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:textSize="21dp" />
+
+                <Button android:text="@string/fr1_myDrone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/fr1_myDrone"
+                    android:background="#7a02bf"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:textSize="21dp" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

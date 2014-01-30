@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/frame_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/login_layout"
+        android:background="#ffffff">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fr3_logo"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_above="@+id/fr3_login"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="@string/fr3_background"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo2_square_white"
+            android:background="#ffffff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:id="@+id/fr3_bottom"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:minHeight="50dp"
+            android:background="#ffffff"
+            android:clickable="true" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fr3_Login"
+            android:id="@+id/fr3_login"
+            android:padding="40dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:background="#4079ff"
+            android:layout_above="@+id/fr3_bottom"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/profile_layout"
+        android:background="#ffffff"
+        android:visibility="invisible">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/up_picture"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:contentDescription="@string/up_picture"
+            android:src="@drawable/com_facebook_profile_picture_blank_square"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/up_profile_name"
+            android:id="@+id/up_profile_name"
+            android:background="#ffffff"
+            android:textSize="30dp"
+            android:password="false"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/up_picture"
+            android:layout_alignParentEnd="false"
+            android:layout_alignBottom="@+id/up_picture"
+            android:gravity="center_vertical|center_horizontal"
+            android:phoneNumber="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/up_share"
+            android:id="@+id/up_share"
+            android:layout_below="@+id/up_picture"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:background="#4079ff"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:gravity="center_vertical|center_horizontal"
+            android:padding="20dp" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/up_logo"
+            android:contentDescription="@string/up_logo"
+            android:layout_alignTop="@+id/up_share"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@+id/up_share"
+            android:src="@drawable/facebook_new" />
+
+
+    </RelativeLayout>
+
+</FrameLayout>

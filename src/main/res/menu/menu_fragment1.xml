@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/change_device"
+        android:id="@+id/change_device"
+        android:orderInCategory="100"
+        android:showAsAction="never"/>
+
+    <item android:title="@string/battery_voltage"
+        android:id="@+id/battery_voltage"
+        android:orderInCategory="99"
+        android:showAsAction="never"/>
+
+    <item android:title="@string/disconnect"
+        android:id="@+id/disconnect"
+        android:orderInCategory="99"
+        android:showAsAction="never"/>
+
+    <item android:title="@string/refresh"
+        android:id="@+id/refresh"
+        android:icon="@android:drawable/stat_notify_sync_noanim"
+        android:orderInCategory="98"
+        android:showAsAction="ifRoom"/>
+
+    <item android:title="@string/co_trend"
+        android:id="@+id/trend"
+        android:orderInCategory="98"
+        android:showAsAction="never"/>
+
+</menu>

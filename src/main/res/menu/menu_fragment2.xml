@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/map_type"
+        android:id="@+id/map_type"
+        android:orderInCategory="100"
+        android:showAsAction="never"/>
+
+    <item android:title="@string/clear_map"
+        android:id="@+id/clear_map"
+        android:orderInCategory="99"
+        android:showAsAction="never"/>
+
+</menu>
