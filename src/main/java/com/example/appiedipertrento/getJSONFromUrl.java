@@ -153,15 +153,19 @@ public class getJSONFromUrl extends AsyncTask<String, String, String>{
         if (value < 5 && value >= -5){
             textView.setBackgroundResource(R.drawable.shade_green);
             textView.setText(String.format("%.3f ppm", value));
+            RealTimeCO.quality_text_average = "good";
         }else if (value >= 5 && value <= 10){
             textView.setBackgroundResource(R.drawable.shade_orange);
             textView.setText(String.format("%.3f ppm", value));
+            RealTimeCO.quality_text_average = "moderate";
         }else if (value > 10){
             textView.setBackgroundResource(R.drawable.shade_red);
             textView.setText(String.format("%.3f ppm", value));
+            RealTimeCO.quality_text_average = "bad";
         }else {
             textView.setBackgroundResource(R.drawable.shade_green);
             textView.setText("???");
+            RealTimeCO.quality_text_average = "???";
         }
 
     }

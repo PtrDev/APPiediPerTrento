@@ -3,9 +3,11 @@ package com.example.appiedipertrento;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.PolylineOptions;
 
@@ -16,6 +18,7 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -94,7 +97,8 @@ public class getPathFromUrl extends AsyncTask<String, String, String>{
     @Override
     protected void onPostExecute(String string_result) {
         super.onPostExecute(string_result);
-        JSONObject results = null;
+        JSONArray results = null;
+        Double[] lon,lat,co;
 
         if (string_result != null){
             try {
@@ -102,16 +106,49 @@ public class getPathFromUrl extends AsyncTask<String, String, String>{
 
                 if (jsonObject.getString("error").equals("null")){
                     //Parse JSON and get the path
+                    results = jsonObject.getJSONArray("result");
+
+                    int max = results.length();
+                    lon = new Double[max];
+                    lat = new Double[max];
+                    co = new Double[max];
 
                     pathLatLongList = new LatLng[results.length()];
-                    PolylineOptions path = new PolylineOptions();
-                    path.width(5f);
 
-                    for (int i = 0; i < results.length(); i++){
+                    JSONArray array = results.getJSONArray(0);
+                    lon[0] = array.getDouble(0);
+                    lat[0] = array.getDouble(1);
+                    co[0] = array.getDouble(2);
+
+                    for (int i = 1; i < results.length(); i++){
+                        array = results.getJSONArray(i);
+                        lon[i] = array.getDouble(0);
+                        lat[i] = array.getDouble(1);
+                        co[i] = array.getDouble(2);
+
+                        PolylineOptions path = new PolylineOptions();
+                        path.width(5f);
+                        if (co[i-1] < 2.5){
+                            path.color(Color.rgb(0,0,255));
+                        }else if (co[i-1] >= 2.5 && co[i-1] <= 5){
+                            path.color(Color.rgb(0,189,0));
+                        }else if (co[i-1] >= 5 && co[i-1] <= 7.5){
+                            path.color(Color.rgb(255,231,54));
+                        }else if (co[i-1] >= 7.5 && co[i-1] <= 10){
+                            path.color(Color.rgb(249,126,2));
+                        }else{
+                            path.color(Color.rgb(0,255,0));
+                        }
+                        path.add(new LatLng(lat[i],lon[i])
+                                ,new LatLng(lat[i-1],lon[i-1]));
+
+                        COMap.map.addPolyline(path);
                     }
+                    COMap.map.addMarker(COMap.start_position).showInfoWindow();
+                    COMap.map.addMarker(COMap.start_position);
 
-                    COMap.map.addPolyline(path);
-                    //COMap.map.animateCamera(CameraUpdateFactory.newLatLng());
+                    COMap.map.animateCamera(CameraUpdateFactory.
+                            newLatLngZoom(new LatLng(lat[0], lon[0]),16.5f));
 
                     mex.quickMessage("Done!");
 

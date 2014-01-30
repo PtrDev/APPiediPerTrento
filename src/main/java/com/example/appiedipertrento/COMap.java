@@ -53,6 +53,7 @@ public class COMap extends Fragment{
     private int FIND_PATH_ID = 37;
     public Boolean START = false;
     public Boolean LAYER = false;
+    public Boolean PATH = false;
 
     public static MarkerOptions start_position,stop_position;
 
@@ -67,7 +68,7 @@ public class COMap extends Fragment{
 
     static GoogleMap map = null;
 
-    CharSequence[] options = {"Ski layer","Map","Satellite","Terrain","Hybrid"};
+    CharSequence[] options = {/*"Ski layer",*/"Map","Satellite","Terrain","Hybrid"};
 
     //LatLng pos_casa = new LatLng(46.106883,11.113357);
     LatLng Trento = new LatLng(46.0667, 11.1167);
@@ -180,13 +181,13 @@ public class COMap extends Fragment{
 
             //NEW MARKER HOME
             casa = new MarkerOptions()
-                    .title("CASA")
+                    .title("Trento, Italy")
                     .snippet("Home sweet home")
                     .position(Trento)
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
 
             //LOAD MAP
-            setUpMapIfNeeded();
+            //setUpMapIfNeeded();
             map.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
                 @Override
                 public void onMapClick(LatLng latLng) {
@@ -235,7 +236,7 @@ public class COMap extends Fragment{
         if (LAYER){
             CheckedItem = GoogleMap.MAP_TYPE_NONE;
         }else {
-            CheckedItem = map.getMapType();
+            CheckedItem = map.getMapType()-1;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),AlertDialog.THEME_HOLO_LIGHT);
         builder.setTitle(getString(R.string.fr2_map_type_select))
@@ -243,12 +244,12 @@ public class COMap extends Fragment{
                 .setSingleChoiceItems(options, CheckedItem, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int selected) {
-                        if (selected == 0) {
+                        if (selected == -1) {
                             LAYER = true;
                             setUpMapIfNeeded();
                         } else {
                             LAYER = false;
-                            map.setMapType(selected);
+                            map.setMapType(selected+1);
                         }
                     }
                 })
@@ -275,6 +276,12 @@ public class COMap extends Fragment{
             return true;
         }else if (item.getItemId()== R.id.clear_map){
             map.clear();
+            START = false;
+            map.addMarker(casa).showInfoWindow();
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(casa.getPosition(),15));
+            return true;
+        }else if (item.getItemId()== R.id.refresh_path){
+            pathRequest();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -320,6 +327,15 @@ public class COMap extends Fragment{
         map.addTileOverlay(new TileOverlayOptions().tileProvider(tileProvider));
     }
 
+    public void pathRequest(){
+        Double lat_start = start_position.getPosition().latitude;
+        Double lon_start = start_position.getPosition().longitude;
+        Double lat_end = stop_position.getPosition().latitude;
+        Double lon_end = stop_position.getPosition().longitude;
+        new getPathFromUrl(getActivity(),true)
+                .execute("https://spatialdb.fbk.eu/appiedi/pathfinder/"+lon_start+"/"+lat_start+"/"+lon_end+"/"+lat_end);
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -330,7 +346,8 @@ public class COMap extends Fragment{
             int mod = res.getInt("mod",0);
             if (mod == 1){
                 //modality1 -> linear path, input: start and destination
-                new getPathFromUrl(getActivity(),true).execute("url");
+                PATH = true;
+                pathRequest();
             }else if (mod == 2){
                 //modality2 -> circular path, input: time
                 int length = res.getInt("length", 0);

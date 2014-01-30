@@ -51,6 +51,7 @@ public class RealTimeCO extends Fragment{
     public static boolean LAST = true;
     public static float quality_value = -10;
     public static String quality_text = "error";
+    public static String quality_text_average = "error";
     public static boolean connected = false;
 
     public QuickMessage Mex;

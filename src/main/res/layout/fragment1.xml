@@ -132,7 +132,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:id="@+id/fr1_mean_absolute"
-                    android:background="#fe0202"
+                    android:background="@drawable/sfondo_piccolo1"
                     android:textStyle="bold"
                     android:textColor="#ffffff"
                     android:textSize="21dp" />
@@ -141,7 +141,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:id="@+id/fr1_mean_weekly"
-                    android:background="#f17d37"
+                    android:background="@drawable/sfondo_piccolo1"
                     android:textStyle="bold"
                     android:textColor="#ffffff"
                     android:textSize="21dp" />
@@ -158,7 +158,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:id="@+id/fr1_mean_daily"
-                    android:background="#03c002"
+                    android:background="@drawable/sfondo_piccolo1"
                     android:textStyle="bold"
                     android:textColor="#ffffff"
                     android:textSize="21dp" />
@@ -167,7 +167,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:id="@+id/fr1_mean_yesterday"
-                    android:background="#ffff02"
+                    android:background="@drawable/sfondo_piccolo1"
                     android:textStyle="bold"
                     android:textColor="#ffffff"
                     android:textSize="21dp" />
@@ -184,7 +184,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:id="@+id/fr1_mean_today"
-                    android:background="#0202c0"
+                    android:background="@drawable/sfondo_piccolo1"
                     android:textStyle="bold"
                     android:textColor="#ffffff"
                     android:textSize="21dp" />
@@ -193,7 +193,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:id="@+id/fr1_myDrone"
-                    android:background="#7a02bf"
+                    android:background="@drawable/sfondo_piccolo1"
                     android:textStyle="bold"
                     android:textColor="#ffffff"
                     android:textSize="21dp" />

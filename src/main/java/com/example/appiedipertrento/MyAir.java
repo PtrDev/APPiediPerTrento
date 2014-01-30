@@ -287,7 +287,7 @@ public class MyAir extends Fragment{
             if (RealTimeCO.connected){
                 quality = " The quality of the air where I am is "+RealTimeCO.quality_text+"!";
             }else {
-                quality = "";
+                quality = " The quality of the air where I am is "+RealTimeCO.quality_text_average+"!";
             }
             try {
                 adapter.updateStory(result,
